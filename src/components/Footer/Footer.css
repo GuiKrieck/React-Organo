@@ -1,0 +1,26 @@
+.footer {
+    background: #6278F7;
+    color: #FFF;
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer ul li {
+    display: inline-block;
+    margin-right: 32px;
+}
+
+.footer ul li:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 900px) {
+    .footer{
+        flex-direction: column;
+        justify-content: center;
+        gap: 48px;
+    }
+}

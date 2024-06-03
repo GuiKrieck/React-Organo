@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Banner from './components/Banner';
 import Form from './components/Form';
 import GameContainer from './components/GameContainer';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -79,6 +80,7 @@ function App() {
       <Banner />
       <Form genre={genres.map(genre => genre.name)} onGameSaved={game => addNewGame(game)} />
       <GameContainer genres={genres} games={games}/>
+      <Footer />
     </div>
   );
 }
