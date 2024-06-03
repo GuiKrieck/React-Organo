@@ -9,7 +9,7 @@ const GameGenres = (props) => {
         <h3 style={{borderColor:props.color}}>{props.name}</h3>
         <div className='gameCardsContainer'>
             {props.games.map(game => {
-                return <GameCard key={game.gameTitle} name={game.gameTitle} price={game.gamePrice} image={game.gameImage} primaryColor={props.color} excludeGame={props.excludeGame} />
+                return <GameCard key={game.gameTitle} gameId={game.gameId} name={game.gameTitle} price={game.gamePrice} image={game.gameImage} primaryColor={props.color} excludeGame={props.excludeGame} />
             })}
         </div>
     </section>

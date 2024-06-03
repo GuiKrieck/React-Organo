@@ -82,28 +82,28 @@ function App() {
   ])
 
   const [games, setGames] = useState([{
-    id:uuidv4(),
+    gameId:uuidv4(),
     gameTitle:'EA SPORTS FC™ 24',
     gamePrice:'R$ 299,00',
     gameImage:'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2195250/header.jpg?t=1713799333',
     gameGenre:'Sports'
   },
   {
-    id:uuidv4(),
+    gameId:uuidv4(),
     gameTitle:'Project Zomboid',
     gamePrice:'R$ 85,00',
     gameImage:'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/108600/header.jpg?t=1691508011',
     gameGenre:'Survival'
   },
   {
-    id:uuidv4(),
+    gameId:uuidv4(),
     gameTitle:'Dota 2',
     gamePrice:'Free to Play',
     gameImage:'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570/header.jpg?t=1714502360',
     gameGenre:'MOBA'
   },
   {
-    id:uuidv4(),
+    gameId:uuidv4(),
     gameTitle:'Soulmask',
     gamePrice:'R$ 80,99',
     gameImage:'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2646460/header_alt_assets_13.jpg?t=1717257996',
@@ -115,8 +115,8 @@ function App() {
     setGames([...games, game])
   }
 
-  function excludeGame(){
-    console.log('hello');
+  function excludeGame(gameToDelete){
+    setGames(games.filter(game => game.gameId !== gameToDelete))
   }
 
   function changeGenreColor(newColor, genreId){

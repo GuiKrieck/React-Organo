@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Button from '../Button'
 import DropList from '../DropList'
 import TextInput from '../TextInput'
+import { v4 as uuidv4 } from 'uuid';
 import './Form.css'
 
 
@@ -15,7 +16,8 @@ const Form = (props) => {
 
     const onFormSubmit = (event) =>{
         event.preventDefault();
-        props.onGameSaved({
+        props.onGameSaved({      
+            gameId:uuidv4(),
             gameTitle,
             gamePrice,
             gameImage,
