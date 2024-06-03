@@ -1,6 +1,13 @@
 .genres{
     text-align: center;
     padding: 32px;
+    position: relative;
+}
+
+.genres .input-color{
+    position: absolute;
+    top: 20px;
+    right: 50px;
 }
 
 .genres h3{
