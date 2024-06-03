@@ -119,6 +119,10 @@ function App() {
     setGames(games.filter(game => game.gameId !== gameToDelete))
   }
 
+  function addNewGenre(newGenre){
+    setGenres([...genres, {...newGenre, id:uuidv4()}]);
+  }
+
   function changeGenreColor(newColor, genreId){
     setGenres(genres.map(genre => {
       if(genre.id === genreId){
@@ -131,7 +135,7 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Form genre={genres.map(genre => genre.name)} onGameSaved={game => addNewGame(game)} />
+      <Form genre={genres.map(genre => genre.name)} onGameSaved={game => addNewGame(game)} addNewGenre={addNewGenre} />
       <GameContainer genres={genres} games={games} excludeGame={excludeGame} changeGenreColor={changeGenreColor}/>
       <Footer />
     </div>
