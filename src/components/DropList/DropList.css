@@ -1,0 +1,21 @@
+.drop-list{
+    margin: 24px 0;
+}
+
+.drop-list label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.drop-list select{
+    background-color: #FFF;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.06);
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    padding: 24px;
+    box-sizing: border-box;
+}

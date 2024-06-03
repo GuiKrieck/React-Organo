@@ -1,0 +1,19 @@
+.genres{
+    text-align: center;
+    padding: 32px;
+}
+
+.genres h3{
+    font-size: 2rem;
+    display: inline-block;
+    border-bottom: 4px solid;
+    padding-bottom: 16px;
+    font-weight: 400;
+}
+
+.genres .gameCardsContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 8px;
+}
