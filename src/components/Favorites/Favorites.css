@@ -1,0 +1,27 @@
+.favoriteContainer{
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.favoriteContainer h2{
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #6278F7;
+    display: inline-block;
+    margin-bottom: 80px;
+    border-bottom: 4px solid #6278F7;
+}
+
+.favoriteContainer > img{
+    position: absolute;
+    right: 145px;
+    top: 20px;
+}
+
+@media (max-width: 900px) {
+    .favoriteContainer > img{
+        display: none;
+    }
+}

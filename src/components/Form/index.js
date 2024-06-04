@@ -11,9 +11,9 @@ const Form = (props) => {
     const[gameTitle, setGameTitle] = useState("")
     const[gamePrice, setGamePrice] = useState("")
     const[gameImage, setGameImage] = useState("")
-    const[gameGenre, setGameGenre] = useState("");
+    const[gameGenre, setGameGenre] = useState("")
     const[newGenre, setNewGenre] = useState("")
-    const[newGenreColor, setNewGenreColor] = useState("");
+    const[newGenreColor, setNewGenreColor] = useState("#000000")
 
 
     const onFormSubmit = (event) =>{
@@ -35,7 +35,7 @@ const Form = (props) => {
         event.preventDefault();
         props.addNewGenre({name:newGenre, color:newGenreColor})
         setNewGenre('')
-        setNewGenreColor('')
+        setNewGenreColor('#000000')
     }
     
     return (
@@ -51,11 +51,11 @@ const Form = (props) => {
                 </Button>
             </form>
             <form onSubmit={onNewGenreSubmit}>
-                <h2>Preencha os dados para criar um novo Genero</h2>
+                <h2>Preencha os dados para criar um novo Gênero</h2>
                 <Input type='text' value={newGenre} onValueChange={value => setNewGenre(value)} required label="Genero" placeholder="Digite o novo Genero para Ser Adicionado" />
                 <Input type='color' value={newGenreColor} onValueChange={value => setNewGenreColor(value)} required label="Cor" />
                 <Button>
-                    Criar novo Genero
+                    Criar novo Gênero
                 </Button>
             </form>
         </section>

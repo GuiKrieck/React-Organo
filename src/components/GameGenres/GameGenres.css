@@ -10,6 +10,10 @@
     right: 50px;
 }
 
+.genres .hidden{
+    display: none;
+}
+
 .genres h3{
     font-size: 2rem;
     display: inline-block;

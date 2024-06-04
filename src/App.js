@@ -4,10 +4,18 @@ import Form from './components/Form';
 import GameContainer from './components/GameContainer';
 import Footer from './components/Footer';
 import { v4 as uuidv4 } from 'uuid';
+import Favorites from './components/Favorites/Favorites';
+
 
 
 function App() {
 
+  const favoriteState = {
+    id:uuidv4(),
+    name: 'Favorites',
+    color: '#FFC0CB'
+  }
+  
   const [genres, setGenres] = useState([
     {
       id:uuidv4(),
@@ -81,35 +89,7 @@ function App() {
     }
   ])
 
-  const [games, setGames] = useState([{
-    gameId:uuidv4(),
-    gameTitle:'EA SPORTS FC™ 24',
-    gamePrice:'R$ 299,00',
-    gameImage:'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2195250/header.jpg?t=1713799333',
-    gameGenre:'Sports'
-  },
-  {
-    gameId:uuidv4(),
-    gameTitle:'Project Zomboid',
-    gamePrice:'R$ 85,00',
-    gameImage:'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/108600/header.jpg?t=1691508011',
-    gameGenre:'Survival'
-  },
-  {
-    gameId:uuidv4(),
-    gameTitle:'Dota 2',
-    gamePrice:'Free to Play',
-    gameImage:'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/570/header.jpg?t=1714502360',
-    gameGenre:'MOBA'
-  },
-  {
-    gameId:uuidv4(),
-    gameTitle:'Soulmask',
-    gamePrice:'R$ 80,99',
-    gameImage:'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2646460/header_alt_assets_13.jpg?t=1717257996',
-    gameGenre:'MMO'
-  },
-])
+  const [games, setGames] = useState([])
 
   const addNewGame = (game) => {
     setGames([...games, game])
@@ -132,11 +112,21 @@ function App() {
     }))
   }
 
+  function changeFavorite(gameId){
+    setGames(games.map(game => {
+      if(game.gameId === gameId){
+        game.favorite = !game.favorite
+      }
+      return game
+    }))
+  }
+
   return (
     <div className="App">
       <Banner />
       <Form genre={genres.map(genre => genre.name)} onGameSaved={game => addNewGame(game)} addNewGenre={addNewGenre} />
-      <GameContainer genres={genres} games={games} excludeGame={excludeGame} changeGenreColor={changeGenreColor}/>
+      <Favorites favoriteState={favoriteState} games={games} excludeGame={excludeGame} changeGenreColor={changeGenreColor} changeFavorite={changeFavorite}/>
+      <GameContainer genres={genres} games={games} excludeGame={excludeGame} changeGenreColor={changeGenreColor} changeFavorite={changeFavorite}/>
       <Footer />
     </div>
   );
