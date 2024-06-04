@@ -39,7 +39,7 @@ const Form = (props) => {
     }
     
     return (
-        <section className='form'>
+        !props.isHidden && <section className='form'>
             <form onSubmit={onFormSubmit}>
                 <h2>Preencha os dados para criar o card do Game</h2>
                 <Input type='text' value={gameTitle} onValueChange={value => setGameTitle(value)} required={true} label="Título" placeholder="Digite o título do jogo" />
@@ -52,7 +52,7 @@ const Form = (props) => {
             </form>
             <form onSubmit={onNewGenreSubmit}>
                 <h2>Preencha os dados para criar um novo Gênero</h2>
-                <Input type='text' value={newGenre} onValueChange={value => setNewGenre(value)} required label="Genero" placeholder="Digite o novo Genero para Ser Adicionado" />
+                <Input type='text' value={newGenre} onValueChange={value => setNewGenre(value)} required label="Genero" placeholder="Digite o novo Gênero para Ser Adicionado" />
                 <Input type='color' value={newGenreColor} onValueChange={value => setNewGenreColor(value)} required label="Cor" />
                 <Button>
                     Criar novo Gênero

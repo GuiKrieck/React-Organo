@@ -13,6 +13,10 @@
     margin-right: 32px;
 }
 
+.footer ul li a img{
+    width: 40px;
+}
+
 .footer ul li:last-child {
     margin-right: 0;
 }

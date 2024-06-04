@@ -5,21 +5,16 @@ const Footer = () => {
         <section>
             <img src="/images/logo.png" alt="" />
         </section>
-        <section>
+        <section >
             <ul>
                 <li>
-                    <a href="facebook.com" target="_blank">
-                        <img src="/images/fb.png" alt="" />
+                    <a href="https://github.com/GuiKrieck" target="_blank" rel="noreferrer">
+                        <img src="/images/github.png" alt="" />
                     </a>
                 </li>
                 <li>
-                    <a href="twitter.com" target="_blank">
-                        <img src="/images/tw.png" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a href="instagram.com" target="_blank">
-                        <img src="/images/ig.png" alt="" />
+                    <a href="https://www.linkedin.com/in/guilherme-krieck/" target="_blank" rel="noreferrer">
+                        <img src="/images/linkedin.png" alt="" />
                     </a>
                 </li>
             </ul>

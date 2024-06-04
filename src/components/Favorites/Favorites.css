@@ -18,10 +18,16 @@
     position: absolute;
     right: 145px;
     top: 20px;
+    cursor: pointer;
 }
 
 @media (max-width: 900px) {
     .favoriteContainer > img{
-        display: none;
+        top: 100px;
+        right: calc(85vw / 2);
+    }
+    
+    .favoriteContainer h2{
+        margin-bottom: 120px;
     }
 }

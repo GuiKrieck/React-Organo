@@ -18,10 +18,16 @@
     position: absolute;
     right: 145px;
     top: 20px;
+    cursor: pointer;
 }
 
 @media (max-width: 900px) {
     .container > img{
-        display: none;
+        top: 100px;
+        right: calc(85vw / 2);
+    }
+    
+    .container h2{
+        margin-bottom: 120px;
     }
 }

@@ -4,7 +4,7 @@ import Form from './components/Form';
 import GameContainer from './components/GameContainer';
 import Footer from './components/Footer';
 import { v4 as uuidv4 } from 'uuid';
-import Favorites from './components/Favorites/Favorites';
+import Favorites from './components/Favorites';
 
 
 
@@ -90,6 +90,7 @@ function App() {
   ])
 
   const [games, setGames] = useState([])
+  const [isFormHidden, setIsFormHidden] = useState(false)
 
   const addNewGame = (game) => {
     setGames([...games, game])
@@ -121,12 +122,34 @@ function App() {
     }))
   }
 
+  function hideShowForm(){
+    setIsFormHidden(!isFormHidden);
+  }
+
   return (
     <div className="App">
       <Banner />
-      <Form genre={genres.map(genre => genre.name)} onGameSaved={game => addNewGame(game)} addNewGenre={addNewGenre} />
-      <Favorites favoriteState={favoriteState} games={games} excludeGame={excludeGame} changeGenreColor={changeGenreColor} changeFavorite={changeFavorite}/>
-      <GameContainer genres={genres} games={games} excludeGame={excludeGame} changeGenreColor={changeGenreColor} changeFavorite={changeFavorite}/>
+      <Form 
+        genre={genres.map(genre => genre.name)} 
+        onGameSaved={game => addNewGame(game)} 
+        addNewGenre={addNewGenre}
+        isHidden={isFormHidden} 
+      />
+      <Favorites 
+        favoriteState={favoriteState} 
+        games={games} 
+        excludeGame={excludeGame} 
+        changeFavorite={changeFavorite}
+        hideForm={hideShowForm}
+      />
+      <GameContainer 
+        genres={genres} 
+        games={games} 
+        excludeGame={excludeGame} 
+        changeGenreColor={changeGenreColor} 
+        changeFavorite={changeFavorite}
+        hideForm={hideShowForm}
+      />
       <Footer />
     </div>
   );
