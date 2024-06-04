@@ -1,3 +1,11 @@
+# Sobre o Projeto
+
+Projeto feito seguindo os cursos React: desenvolvendo com JavaScript minstrado pelos instrutores Vinicios Neves e Paulo Silveira, e também o curso React: como os componentes funcionam ministrado pelo instrutor Luiz Fernando Ribeiro.
+O projeto em si consiste em uma app para tornar possível o cadastro de uma wishlist de games, indiferente das lojas onde se encontram.
+
+os usuários devem preencher os campos e ao clicar no botão para criar o card, o card será criado em baixo de "Minha Organização" de acordo com o Genero do jogo selecionado. através do card é possível excluir o jogo clicando no botão em formato de X no topo do card, ou favoritar o jogo clicando no botão em formato de coração na parte de baixo do card. ao favoritar o jogo ele vai para um container especial que fica acima do container "minha Organização.
+Caso o gênero do jogo cadastrado não esteja presente na lista, usando o formulário de adicionar genero é possível adicionar novos gêneros.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
